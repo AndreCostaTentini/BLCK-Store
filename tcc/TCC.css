@@ -1,0 +1,218 @@
+/* ===== ESTILO GERAL DA PÁGINA ===== */
+body {
+    background-color: #f4f4f4;  /* Cor de fundo da página */
+    color: #111;                /* Cor padrão dos textos */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte principal */
+}
+
+/* ===== TÍTULOS ===== */
+h1, h2 {
+    color: #111;              /* Cor dos títulos */
+    letter-spacing: 1px;      /* Espaçamento entre letras */
+    font-family: Arial, Helvetica, sans-serif; 
+    text-transform: uppercase; /* Deixa tudo em MAIÚSCULO */
+}
+
+h2 {
+    font-size: 28px;      /* Tamanho do subtítulo */
+    margin-bottom: 10px;  /* Espaço abaixo do título */
+}
+
+/* ===== ALINHAMENTOS ===== */
+.alinhar, .alinhar2{
+    text-align: center; /* Centraliza o texto */
+    margin: 2px;        /* Espaço externo */
+    padding: 2px;       /* Espaço interno */
+}
+
+.imagem{
+   text-align: center; /* Centraliza imagens */
+}
+
+/* ===== VITRINE (CARROSSEL DE PRODUTOS) ===== */
+.vitrine-container {
+    position: relative;      /* Permite posicionar botões por cima */
+    display: flex;           /* Ativa Flexbox */
+    align-items: center;     /* Centraliza verticalmente */
+    width: 90%;              /* Largura da vitrine */
+    margin: 20px auto;       /* Centraliza na página */
+}
+
+.vitrine {
+    display: flex;           /* Produtos lado a lado */
+    gap: 20px;               /* Espaço entre produtos */
+    overflow-x: auto;        /* Permite rolagem horizontal */
+    scroll-behavior: smooth; /* Rolagem suave */
+    flex-wrap: nowrap;       /* Não quebra linha */
+    padding: 10px 0;
+}
+
+/* Esconde a barra de rolagem */
+.vitrine::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== IMAGENS DOS PRODUTOS ===== */
+.card-produto img {
+    width: 200px;            /* Tamanho fixo */
+    height: auto;            /* Mantém proporção */
+    border-radius: 10px;     /* Bordas arredondadas */
+    cursor: pointer;         /* Muda cursor ao passar mouse */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+}
+
+/* Efeito ao passar o mouse */
+.card-produto img:hover {
+    transform: translateY(-5px); /* Sobe levemente */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* Sombra */
+}
+
+/* ===== BOTÕES DE ROLAGEM ===== */
+.scroll-btn {
+    position: absolute;         /* Fica por cima da vitrine */
+    top: 50%;                   /* Centraliza verticalmente */
+    transform: translateY(-50%);
+    z-index: 10;                /* Fica na frente */
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    width: 40px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.scroll-btn.left {
+    left: 0; /* Botão na esquerda */
+}
+
+.scroll-btn.right {
+    right: 0; /* Botão na direita */
+}
+
+/* ===== CARD PADRÃO DO PRODUTO ===== */
+.produto {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;   /* Ajusta imagem sem distorcer */
+    border-radius: 12px;
+    background: #fff;
+    flex-shrink: 0;      /* Impede encolher no flex */
+}
+
+/* Efeito hover no card */
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== LINKS ===== */
+.link {
+    list-style: none;    /* Remove bolinhas da lista */
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link li {
+    margin: 10px 0;
+}
+
+.link a {
+    color: #0000FF;      /* Azul padrão */
+    font-size: 20px;
+    text-decoration: none; /* Remove sublinhado */
+}
+
+
+.link a:hover {
+    color: #000099;  /* Azul mais escuro ao passar mouse */
+}
+
+/* ===== SEÇÃO DESTAQUE ===== */
+.destaque-historia {
+    background-color: #fff8e1; /* Fundo bege claro */
+    padding: 40px;
+    margin: 40px 0;
+    border-left: 5px solid gold; /* Borda dourada lateral */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 60%;
+
+}
+
+/* ===== INSTAGRAM ===== */
+
+
+.instagram-wrapper {
+    max-width: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    height: 500px;
+
+}
+.texto{
+    width: 50%;
+}
+
+.historia{
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+
+/* ===== TEXTOS ===== */
+p {
+    line-height: 1.7; /* Espaçamento entre linhas */
+    font-size: 16px;
+    color: #333;
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter input {
+    width: 250px; /* Largura do campo */
+}
+
+/* Estilo geral de inputs */
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+/* Botões */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* ===== PARCEIROS E GALERIA ===== */
+.parceiros, .galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite quebrar linha */
+}
+
+.parceiros img, .galeria img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.parceiros img:hover, .galeria img:hover {
+    transform: scale(1.05); /* Leve zoom */
+}
